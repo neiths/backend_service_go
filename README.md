@@ -6,6 +6,34 @@ website to design database: `https://dbdiagram.io`
 
 ![alt text](assets/schema_db.png)
 
+install golang/migrate `https://github.com/golang-migrate/migrate/tree/master/cmd/migrate`
+
+for Quickinstall
+
+```
+$ curl -s https://packagecloud.io/install/repositories/golang-migrate/migrate/script.deb.sh | sudo bash
+$ apt-get update
+$ apt-get install -y migrate
+```
+
+start postgres db through docker
+
+``` 
+docker run --name postgres16 -p 5433:5432 -e POSTGRES_USER=root -e POSTGRES_PASSWORD=secret -d postgres:16-alpine
+
+# through terminal shell
+docker exec -it postgres16 /bin/bash
+createdb --username=root --owner=root simple_bank
+dropdb simple_bank
+
+docker exec -it postgres16 createdb --username=root --owner=root simple_bank
+
+docker exec -it postgres16 psql -U root simple_bank
+```
+migrate -path db/migration -database "postgresql://root:secret@localhost:5433/simple_bank?sslmode=disable" -verbose up
+
+
+
 golang migrat: `https://github.com/golang-migrate/migrate`
 
 2. Deeply understand the DB isolation levels, transactions and how to avoid deadlock
