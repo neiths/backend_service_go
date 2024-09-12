@@ -2,9 +2,11 @@
 
 1. Design database schema using DBML and automatically generate SQL code from it
 
-`https://dbdiagram.io`
+website to design database: `https://dbdiagram.io`
 
-![alt text](/workspaces/backend_service_go/assets/schema_db.png)
+![alt text](assets/schema_db.png)
+
+golang migrat: `https://github.com/golang-migrate/migrate`
 
 2. Deeply understand the DB isolation levels, transactions and how to avoid deadlock
 3. Automatically generate Golang code to interact with the database
