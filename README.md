@@ -1,6 +1,11 @@
 # backend_service_go
 
 1. Design database schema using DBML and automatically generate SQL code from it
+
+`https://dbdiagram.io`
+
+![alt text](/workspaces/backend_service_go/assets/schema_db.png)
+
 2. Deeply understand the DB isolation levels, transactions and how to avoid deadlock
 3. Automatically generate Golang code to interact with the database
 4. Develop a RESTful backend web service using the Gin framework
